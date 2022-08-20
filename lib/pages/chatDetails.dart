@@ -43,6 +43,16 @@ class ChatDetailsPageState extends State<ChatDetails> {
               icon: const Icon(Icons.more_vert))
         ],
       ),
+      body: Column(
+        children: [
+          const Expanded(child: Text("Messages")),
+          Container(
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.all(16.0),
+            child: Flexible(child: TextFormField()),
+          )
+        ],
+      ),
     );
   }
 }
