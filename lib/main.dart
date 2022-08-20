@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/pages/home.dart';
 
 void main() {
-  runApp(WhatsApp());
+  runApp(const WhatsApp());
 }
 
 class WhatsApp extends StatelessWidget {
+  const WhatsApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Whatsapp Clone',
+      title: 'Whatsapp',
       theme: ThemeData(
-          primaryColor: Color(0xff075e54), 
-          accentColor: Color(0xff25d366)),
+          primaryColor: const Color(0xff075e54),
+          accentColor: const Color(0xff25d366)),
+      home: const HomePage(),
     );
   }
 }
