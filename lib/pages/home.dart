@@ -20,7 +20,7 @@ class HomePageState extends State<HomePage>
 
   @override
   void initState() {
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 4, initialIndex: 1, vsync: this);
     setState(() {});
     super.initState();
   }
@@ -30,6 +30,14 @@ class HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Whatsapp"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print("Search button pressed");
+            },
+          )
+        ],
         bottom: TabBar(
           tabs: topTabs,
           indicatorColor: Colors.white,
