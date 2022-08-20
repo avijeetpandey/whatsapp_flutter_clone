@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
 
   final List<Tab> topTabs = <Tab>[
     const Tab(icon: Icon(Icons.camera_alt)),
@@ -32,6 +32,7 @@ class HomePageState extends State<HomePage>
         title: const Text("Whatsapp"),
         bottom: TabBar(
           tabs: topTabs,
+          indicatorColor: Colors.white,
           controller: _tabController,
         ),
       ),
