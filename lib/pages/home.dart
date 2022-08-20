@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/pages/chat.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,6 +19,21 @@ class HomePageState extends State<HomePage>
     const Tab(text: 'CALLS')
   ];
 
+  final List<IconButton> topActions = <IconButton>[
+    IconButton(
+      icon: const Icon(Icons.search),
+      onPressed: () {
+        print("Search button pressed");
+      },
+    ),
+    IconButton(
+      icon: const Icon(Icons.more_vert),
+      onPressed: () {
+        print("More button clicked");
+      },
+    )
+  ];
+
   @override
   void initState() {
     _tabController = TabController(length: 4, initialIndex: 1, vsync: this);
@@ -30,21 +46,22 @@ class HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Whatsapp"),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              print("Search button pressed");
-            },
-          )
-        ],
+        actions: topActions,
         bottom: TabBar(
           tabs: topTabs,
           indicatorColor: Colors.white,
           controller: _tabController,
         ),
       ),
-      body: const Text("This is body of the app"),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          const Text('CAMERA'),
+          const ChatPage(),
+          const Text('STATUS'),
+          const Text('CALLS')
+        ],
+      ),
     );
   }
 }
