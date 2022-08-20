@@ -55,11 +55,11 @@ class HomePageState extends State<HomePage>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          const Text('CAMERA'),
-          const ChatPage(),
-          const Text('STATUS'),
-          const Text('CALLS')
+        children: const [
+          Text('CAMERA'),
+          ChatPage(),
+          Text('STATUS'),
+          Text('CALLS')
         ],
       ),
     );
