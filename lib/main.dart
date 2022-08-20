@@ -12,6 +12,7 @@ class WhatsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Whatsapp',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: const Color(0xff075e54),
           accentColor: const Color(0xff25d366)),
