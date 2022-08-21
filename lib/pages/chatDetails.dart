@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/pages/messagePage.dart';
 
 class ChatDetails extends StatefulWidget {
   const ChatDetails({Key? key}) : super(key: key);
@@ -45,11 +46,25 @@ class ChatDetailsPageState extends State<ChatDetails> {
       ),
       body: Column(
         children: [
-          const Expanded(child: Text("Messages")),
+          const Expanded(child: MessagePage()),
           Container(
             alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.all(16.0),
-            child: Flexible(child: TextFormField()),
+            child: Flexible(
+                child: TextFormField(
+              minLines: 1,
+              maxLines: 5,
+              decoration: InputDecoration(
+                  hintText: "Enter the message",
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(color: Colors.grey, width: 0.0),
+                      borderRadius: BorderRadius.circular(50)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(color: Colors.grey, width: 0.0),
+                      borderRadius: BorderRadius.circular(50))),
+            )),
           )
         ],
       ),
